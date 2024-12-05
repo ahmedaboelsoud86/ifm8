@@ -1,0 +1,147 @@
+.contactus {
+    @include section;
+    background: $white url(../images/testimonial-bg-1.png) no-repeat fixed center center/cover;
+    padding: $com-spacing-6 $zero $com-spacing-8 $zero;
+    .item {
+        margin-top: $com-spacing-6;
+        @media (max-width: 991px) {
+            max-width: 50%;
+            flex: 50%;
+        }
+        @media (max-width: 550px) {
+            max-width: $fullwidth;
+            flex: $fullwidth;
+        }
+        .contact-block {
+            position: relative;
+            background: $white;
+            padding: 40px $com-spacing-4;
+            @include border-radius(8px);
+            min-height: 266px;
+            text-align: center;
+            @include transition(all 0.5s ease-in-out 0s);
+            @include prefixer (box-shadow, 4px 4px 60px #0000000a, webkit moz o ms);
+            svg {
+                max-width: 56px;
+                max-height: 56px;
+                fill: $blue;
+                @include transition(all 0.5s ease-in-out 0s);
+            }
+            .block-info {
+                position: relative;
+                margin-top: $com-spacing-6;
+                z-index: 10;
+                .title {
+                    font-size: 28px;
+                    @include transition(all 0.5s ease-in-out 0s);
+                }
+                p,
+                a {
+                    display: block;
+                    margin-top: $com-spacing-2;
+                    overflow: hidden;
+                    @include transition(all 0.5s ease-in-out 0s);
+                }
+            }
+            &:hover {
+                background: $blue;
+                svg {
+                    fill: $white;
+                }
+                &::before {
+                    border: 2px solid $white;
+                }
+                .block-info {
+                    .title {
+                        color: $white;
+                        &::after {
+                            background: $white;
+                        }
+                    }
+                    p,
+                    a {
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+    .mt {
+        margin-top: $com-spacing-9;
+        @media (max-width: 991px) {
+            margin-top: $com-spacing-6;
+            max-width: $fullwidth;
+            flex: $fullwidth;
+            .mintitle {
+                text-align: $left;
+            }
+        }
+        .title {
+            line-height: 120%;
+            margin-top: $com-spacing-3;
+            @media (max-width: 991px) {
+                margin-top: $com-spacing-2;
+            }
+        }
+    }
+    .alert {
+        margin: $zero;
+        margin-top: $com-spacing-6;
+    }
+    .field {
+        margin-top: $com-spacing-6;
+        @media (max-width: 767px) {
+            max-width: $fullwidth;
+            flex: $fullwidth;
+        }
+        .form-control {
+            @include input;
+        }
+        textarea.form-control {
+            height: 222px;
+            resize: $none;
+        }
+        .bottom {}
+    }
+}
+
+.map {
+    background: $ofwhite;
+    height: $fullwidth;
+    iframe {
+        display: block;
+        border: $zero;
+        width: $fullwidth;
+        height: $fullwidth;
+    }
+}
+
+.helpform{
+    background: #f1f9fc  url(../images/testimonial-bg-1.png) no-repeat fixed center center/cover;
+    .item{
+        @media (max-width: 991px) {
+            max-width: $fullwidth;
+            flex: $fullwidth;  
+        }
+    }
+    .field{
+        margin: $zero;
+        margin-bottom: $com-spacing-6;
+        &:last-child{
+            margin: $zero;
+        }
+    }
+    p{
+        margin-top: $com-spacing-6;
+        a{
+            color: $blue;
+            &:hover{
+              text-decoration: underline;
+            }
+        }
+    }
+    #row_dim,#row_dim2{
+        width: $fullwidth;
+        margin-bottom: $com-spacing-6;
+    }
+}

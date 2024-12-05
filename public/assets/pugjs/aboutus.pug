@@ -1,0 +1,69 @@
+extend index
+
+block pageindex
+ section.map-back
+  img(src="images/slider/img1.jpg" alt="")
+  div(class="container") 
+   h1.title about us
+   ul.maplink
+     li #[a(href="index.html") home]
+     li about us  
+ section.about
+  div.container
+   div.row
+    div(class="col-sm-6 item") 
+     div.tp-about
+      div(class="tp-about-3")
+       img(src="images/shape-2-2.jpg" alt="") 
+      div(class="tp-about-4")
+       img(src="images/shape-2-3.jpg" alt="") 
+      div(class="tp-about-2-thumb-text") 
+        div.num
+         h3(class="timer" data-to="12" data-speed="1500") 
+         span +
+        p Years of experience
+    div(class="col-sm-6 item") 
+     div.w-100
+      span.tag About Company
+      h1.title Twelve Years Of Providing
+      p    Integrated Facilities was established to effectively manage, operate, and maintain government, corporate, and public facilities. With a foundation dating back to 1976, we bring nearly 50 years of experience in delivering comprehensive facility management solutions. Our trained team, guided by industry experts, employs proven methodologies and the latest innovative technologies to optimize operations, enhance sustainability, and drive efficiency. We are dedicated to providing tailored solutions that align with our partners’ strategic goals and contribute to their overall success.
+ include ../pugjs/numbers.pug
+ <!--End provide-->
+ section.aboutinner
+  div.container
+   span(class="tag text-center mb-2") Why Choose Us
+   h2.title.text-center Integrated Facility  
+   div.row
+    div.col-sm-3.item
+     div.inner 
+      div.icon
+       img(src="images/tw.svg" alt="" title="")
+      h3.title   Mission
+      p  To transform facilities into sustainable, efficient spaces through innovative integrated management.
+
+    div.col-sm-3.item
+     div.inner 
+      div.icon
+       img(src="images/vision.svg" alt="" title="")
+      h3.title Visions
+      p  A future where every facility coexists harmoniously with nature.An ecosystem of seamless collaboration between technology and services.
+
+
+
+    div.col-sm-3.item
+     div.inner 
+      div.icon
+       img(src="images/ingots.svg" alt="" title="")
+      h3.title     Advantages
+      p  Streamlined operations that drive enhanced efficiency. Commitment to sustainability that minimizes environmental impact. Expert management ensuring superior quality and performance.
+
+    div.col-sm-3.item
+     div.inner 
+      div.icon
+       img(src="images/target.svg" alt="" title="")
+      h3.title Values
+      p  Integrity in all our interactions, innovation at the heart of our solutions, collaboration with clients and partners for mutual success, and excellence in service delivery and outcomes.
+ include ../pugjs/provide.pug
+ <!--End provide-->
+ include ../pugjs/minclients.pug
+ <!--End minclients-->  

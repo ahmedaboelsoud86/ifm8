@@ -1,0 +1,145 @@
+.slider {
+    position: relative;
+    width: $fullwidth;
+    overflow: hidden;
+    background: $white;
+    .carousel-item {
+        height: 100vh;
+        @media (max-width: 991px) {
+            height: 80vh;
+        }
+        &::before {
+            content: '';
+            @include position(absolute, $top: 0, $left: 0);
+            width: $fullwidth;
+            height: $fullwidth;
+            background: #00000075;
+        }
+        img {
+            width: $fullwidth;
+            height: $fullwidth;
+            object-fit: cover;
+        }
+    }
+    .carousel-control-next,
+    .carousel-control-prev {
+        position: absolute;
+        top: $auto;
+        bottom: $zero;
+        width: 44px;
+        height: 44px;
+        bottom: $zero;
+        background: $white;
+        opacity: 1;
+        @include transition(all 0.5s ease-in-out 0s);
+        @media (max-width: 991px) {
+            width: 34px;
+            height: 34px;
+        }
+        svg {
+            width: 20px;
+            height: 20px;
+            fill: $blak;
+            @include transition(all 0.5s ease-in-out 0s);
+            @media (max-width: 991px) {
+                width: 18px;
+                height: 18px;
+            }
+        }
+        &:hover {
+            background: $blue;
+            svg {
+                fill: $white;
+            }
+        }
+    }
+    .carousel-control-next {
+        right: $com-spacing-6;
+        @media (max-width: 991px) {
+            right: $com-spacing-3;
+        }
+    }
+    .carousel-control-prev {
+        left: $auto;
+        right: 69px;
+        @media (max-width: 991px) {
+            right: 47px;
+        }
+        svg {
+            @include rotate(180deg);
+        }
+    }
+    .cen-text {
+        @include flex;
+        justify-content: flex-start;
+        position: absolute;
+        top: $zero;
+        left: $zero;
+        right: $zero;
+        z-index: 100;
+        height: $fullwidth;
+        @media (max-width: 991px) {
+            text-align: center;
+        }
+        .title {
+            color: $white;
+            font-size: 48px;
+            margin-top: $com-spacing-6;
+            @media (max-width: 991px) {
+                display: $none;
+                font-size: 32px;
+                br {
+                    display: $none;
+                }
+            }
+        }
+        .text {
+            display: block;
+            color: $white;
+            margin-top: 160px;
+            text-transform: uppercase;
+            @media (max-width: 991px) {
+                display: $none;
+            }
+            @media (max-width: 767px) {}
+        }
+        .bottom {
+            margin-top: $com-spacing-6;
+            // background: $green;
+            // &:hover {
+            //     background: #2c542f;
+            //     box-shadow: 10px 5px 40px #2c542f6b;
+            // }
+            @media (max-width: 991px) {
+                display: $none;
+            }
+        }
+    }
+    .carousel-indicators {
+        margin: $zero;
+        padding: $zero;
+        bottom: $com-spacing-7;
+        li {
+            background: $white;
+            width: 10px;
+            height: 10px;
+            @include border-radius(50%);
+            border: 1px solid $white;
+            &.active {
+                background: $none;
+            }
+        }
+    }
+    iframe,
+    video {
+        position: absolute;
+        height: $fullwidth;
+        width: $fullwidth;
+        left: 50%;
+        top: 50%;
+        object-fit: cover;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+}

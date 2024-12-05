@@ -1,0 +1,356 @@
+ .products {
+     @include section;
+     background: $ofwhite;
+     .item {
+         margin-bottom: $com-spacing-6;
+         @media (max-width: 991px) {
+             max-width: 50%;
+             flex: 50%;
+         }
+         @media (max-width:550px) {
+             max-width: $fullwidth;
+             flex: $fullwidth;
+         }
+         .inner {
+             width: $fullwidth;
+             box-shadow: 0px 0px 13px #d0d0d070;
+             @include border-radius(10px);
+             //  overflow: hidden;
+             background: $white;
+             padding: $com-spacing-4;
+             padding-bottom: $com-spacing-7;
+             text-align: center;
+             @include transition(all 0.5s ease-in-out 0s);
+             .zoom-box .viewer-box {
+                 left: $zero !important;
+             }
+             .photo {
+                 @include flex;
+                 width: $fullwidth;
+                 height: 200px;
+                 img {
+                     max-width: $fullwidth;
+                     max-height: $fullwidth;
+                 }
+             }
+             .title {
+                 display: -webkit-box;
+                 -webkit-line-clamp: 1;
+                 -webkit-box-orient: vertical;
+                 overflow: hidden;
+                 text-align: center;
+                 margin-top: $com-spacing-4;
+                 font-size: 22px !important;
+                 @include transition(all 0.5s ease-in-out 0s);
+                 &:hover {
+                     color: $blue;
+                 }
+             }
+             p {
+                 margin-top: $com-spacing-3;
+                 line-height: 1.5;
+                 height: 46px;
+                 overflow: hidden;
+                 @media (max-width: 550px) {
+                     height: $auto;
+                 }
+             }
+             &:hover {
+                 @include prefixer (box-shadow, 0px 0px 20px #d0d0d0, webkit moz o ms);
+             }
+         }
+     }
+     &.mar {
+         background: $white;
+         .item {
+             margin: $zero;
+             margin-top: $com-spacing-6;
+         }
+     }
+ }
+ 
+ .more {
+     display: inline-block;
+     position: relative;
+     color: $blue;
+     font-size: 18px;
+     margin-top: $com-spacing-4;
+     &:after {
+         content: "";
+         @include position(absolute, $bottom: -5px, $left: 0px);
+         width: 40%;
+         background: $blue;
+         height: 2px;
+         @include transition(all 0.5s ease-in-out 0s);
+     }
+     &:hover {
+         &:after {
+             width: $fullwidth;
+         }
+     }
+ }
+ 
+ .products-inner {
+     @include section;
+     background: $ofwhite;
+     .item {
+         @media (max-width: 991px) {
+             max-width: $fullwidth;
+             flex: $fullwidth;
+             margin-bottom: $com-spacing-6;
+             &:last-child {
+                 margin: $zero;
+             }
+         }
+         &.flexcen {
+             display: flex;
+             align-items: center;
+             .cen-box {
+                 min-width: $fullwidth;
+             }
+         }
+         .social {
+             @include socialrou;
+             @media (max-width: 767px) {
+                 margin-top: $com-spacing-3;
+                 a {
+                     margin: $zero !important;
+                     margin-right: $com-spacing-2 !important;
+                 }
+             }
+         }
+         .boxshear {
+             display: flex;
+             justify-content: space-between;
+             align-items: center;
+             @media (max-width: 767px) {
+                 display: block;
+             }
+             .cat-g {
+                 color: $blue;
+                 font-size: 22px;
+             }
+         }
+         .carousel {
+             position: sticky;
+             top: 100px;
+             z-index: 10;
+             .carousel-inner {
+                 width: $fullwidth;
+                 background: $white;
+                 z-index: 10;
+                 @include border-radius(4px);
+                 border: 1px solid #ccc;
+                 overflow: inherit;
+                 //  @include prefixer (box-shadow, 0px 0px 13px #d0d0d070, webkit moz o ms);
+                 @media (max-width: 500px) {
+                     width: $fullwidth;
+                 }
+                 .carousel-item {
+                     // position: relative;
+                     // 
+                     width: $fullwidth;
+                     height: 368px;
+                     @media (max-width: 767px) {
+                         height: 268px;
+                     }
+                     img {
+                         margin: 0 auto;
+                         max-width: $fullwidth;
+                         max-height: $fullwidth;
+                     }
+                     // &:hover {
+                     //     img {
+                     //         @include scale(1.15);
+                     //     }
+                     // }
+                 }
+             }
+             ol.carousel-indicators {
+                 display: flex;
+                 justify-content: center;
+                 flex-wrap: wrap;
+                 position: relative;
+                 width: $fullwidth;
+                 margin: $zero;
+                 margin-top: $com-spacing-4;
+                 padding: $zero;
+                 li {
+                     @include flex;
+                     min-width: 80px;
+                     max-width: 80px;
+                     height: 60px;
+                     text-indent: 0;
+                     background: $white;
+                     margin: $zero;
+                     overflow: hidden;
+                     @include border-radius(4px);
+                     margin: $com-spacing-2 $com-spacing-1 $zero $com-spacing-1;
+                     border: 1px solid #ccc;
+                     overflow: hidden;
+                     @media (max-width: 500px) {}
+                     img {
+                         max-width: $fullwidth;
+                         max-height: $fullwidth;
+                     }
+                     &.active {
+                         border: 1px solid $blue;
+                     }
+                 }
+             }
+         }
+         .title {
+             font-size: 26px !important;
+             margin-top: $com-spacing-3;
+             text-align: $left;
+             &::before {
+                 display: $none;
+             }
+         }
+         .product-spec {
+             margin-top: $com-spacing-2;
+             width: 380px;
+             @media (max-width: 991px) {
+                 width: $fullwidth;
+             }
+             li {
+                 display: flex;
+                 justify-content: space-between;
+                 min-width: $fullwidth;
+                 margin-top: $com-spacing-3;
+                 p {
+                     color: $blak;
+                     font-weight: 500;
+                 }
+                 span {
+                     font-weight: 500;
+                     &.blue {
+                         color: $blue;
+                     }
+                 }
+             }
+         }
+         .bottoms {
+             display: flex;
+             margin-top: $com-spacing-5;
+             .bottom {
+                 text-align: center;
+                 svg {
+                     max-width: 20px;
+                     fill: $white;
+                     margin-right: $com-spacing-1;
+                 }
+             }
+             .order {
+                 display: flex;
+                 align-items: center;
+                 margin-left: $com-spacing-3;
+                 color: $blue;
+                 @include transition(all 0.5s ease-in-out 0s);
+                 svg {
+                     min-width: 20px;
+                     fill: $blue;
+                     max-width: 20px;
+                     margin-right: $com-spacing-1;
+                     @include transition(all 0.5s ease-in-out 0s);
+                 }
+             }
+         }
+     }
+ }
+ 
+ .modal {
+     padding: $zero $com-spacing-4 !important;
+     overflow-x: hidden;
+     overflow-y: auto;
+     background: rgba(0, 0, 0, 0.64);
+     .modal-dialog {
+         margin: $com-spacing-6 $auto;
+         max-width: 855px;
+     }
+     .modal-content {
+         padding: $com-spacing-6;
+         text-align: center;
+     }
+     .close {
+         @include position(absolute, $top: $com-spacing-3, $right: $com-spacing-3);
+         margin: $zero;
+         padding: $zero;
+         opacity: 1;
+         text-shadow: $none;
+         outline: $none;
+     }
+     .title {
+         @include title;
+         font-size: 28px !important;
+         margin-bottom: $com-spacing-4;
+         &::before {
+             display: $none;
+         }
+     }
+     .inpusrach {
+         margin-top: $com-spacing-4;
+         &.flexcen {
+             display: flex;
+             align-items: center;
+         }
+         .form-control {
+             @include input;
+         }
+         textarea.form-control {
+             height: 150px;
+             resize: $none;
+         }
+         .bottom {
+             height: 48px;
+             margin-right: $com-spacing-3;
+         }
+     }
+     .cancel {
+         color: $blue;
+     }
+ }
+ 
+ .zoom-box {
+     position: relative;
+     display: flex;
+     align-items: center;
+     justify-self: center;
+     width: 100%;
+     height: 100%;
+ }
+ 
+ .zoom-box .zoom-selector {
+     position: absolute;
+     background-image: url("../images/selector.png");
+     background-repeat: repeat;
+     display: none;
+     cursor: crosshair;
+ }
+ 
+ .zoom-box .viewer-box {
+     position: absolute;
+     box-shadow: 0px 0px 13px #d0d0d070;
+     border-radius: 4px;
+     display: none;
+     background: #fff;
+     overflow: hidden;
+     width: 100%;
+     height: 100%;
+     left: 101% !important;
+     zoom: 200%;
+ }
+ 
+ @media (max-width:991px) {
+     .zoom-box .viewer-box {
+         display: none !important;
+     }
+ }
+ 
+ .zoom-box .viewer-box>img {
+     position: absolute;
+     left: 0;
+     top: 0;
+     max-width: inherit !important;
+     max-height: inherit !important;
+ }
